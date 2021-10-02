@@ -6,12 +6,21 @@ import CharacterList from "./CharacterList";
 
 function App() {
   const [data, setData] = useState([]);
+  const [searchName, setSearchName] = useState("");
 
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
       setData(initialData);
     });
   }, []);
+
+  const handleSearchName = (ev) => {
+    setSearchName(ev.currentTarget.value);
+  };
+
+  const filteredData = data.filter((character) =>
+    character.name.toLocaleLowerCase().includes(searchName)
+  );
 
   return (
     <div>
@@ -22,9 +31,11 @@ function App() {
           name="name"
           id="name"
           placeholder="Busca a tu personaje favorito"
+          value={searchName}
+          onChange={handleSearchName}
         />
       </form>
-      <CharacterList data={data} />
+      <CharacterList data={filteredData} />
     </div>
   );
 }
