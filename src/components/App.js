@@ -1,7 +1,19 @@
 import "../styles/CardList.scss";
 import "../styles/CardItem.scss";
+import api from "../services/CharacterApi";
+import { useEffect, useState } from "react";
+import CharacterList from "./CharacterList";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    api.getCharactersFromApi().then((initialData) => {
+      console.log(initialData);
+      setData(initialData);
+    });
+  }, []);
+
   return (
     <div>
       <h1>Rick and Morty</h1>
@@ -11,18 +23,7 @@ function App() {
         id="name"
         placeholder="Busca a tu personaje favorito"
       />
-      <ul>
-        <li className="cardList">
-          <img
-            className="cardImage"
-            src="https://raw.githubusercontent.com/Adalab/rick-y-morty/master/assets/img/1.jpeg"
-            alt={`Foto de nombre`}
-            title={`Foto de nombre`}
-          />
-          <h4>Nombre del personaje</h4>
-          <p>Especie</p>
-        </li>
-      </ul>
+      <CharacterList data={data} />
     </div>
   );
 }
