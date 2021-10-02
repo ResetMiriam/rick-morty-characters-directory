@@ -5,22 +5,37 @@ import { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
 
 function App() {
+  // STATES
   const [data, setData] = useState([]);
   const [searchName, setSearchName] = useState("");
+  const [searchSpecies, setSearchSpecies] = useState("all");
 
+  //USEFFECT
   useEffect(() => {
-    api.getCharactersFromApi().then((initialData) => {
+    api().then((initialData) => {
       setData(initialData);
     });
   }, []);
 
+  //HANDLE
   const handleSearchName = (ev) => {
     setSearchName(ev.currentTarget.value);
   };
 
-  const filteredData = data.filter((character) =>
-    character.name.toLocaleLowerCase().includes(searchName)
-  );
+  const handleSearchSpecies = (ev) => {
+    setSearchSpecies(ev.target.value);
+  };
+
+  const filteredData = data
+    .filter((character) =>
+      character.name
+        .toLocaleLowerCase()
+        .includes(searchName.toLocaleLowerCase())
+    )
+    .filter(
+      (character) =>
+        searchSpecies === "all" || character.species === searchSpecies
+    );
 
   return (
     <div>
@@ -30,10 +45,21 @@ function App() {
           type="text"
           name="name"
           id="name"
-          placeholder="Busca a tu personaje favorito"
+          placeholder="Search your favorite character"
           value={searchName}
           onChange={handleSearchName}
         />
+        <label htmlFor="species"></label>
+        <select
+          name="species"
+          id="species"
+          value={searchSpecies}
+          onChange={handleSearchSpecies}
+        >
+          <option value="all">All</option>
+          <option value="Human">Human</option>
+          <option value="Alien">Alien</option>
+        </select>
       </form>
       <CharacterList data={filteredData} />
     </div>
