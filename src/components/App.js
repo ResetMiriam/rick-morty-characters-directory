@@ -9,7 +9,6 @@ function App() {
 
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
-      console.log(initialData);
       setData(initialData);
     });
   }, []);
@@ -17,12 +16,14 @@ function App() {
   return (
     <div>
       <h1>Rick and Morty</h1>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Busca a tu personaje favorito"
-      />
+      <form>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Busca a tu personaje favorito"
+        />
+      </form>
       <CharacterList data={data} />
     </div>
   );
