@@ -3,6 +3,7 @@ import "../styles/CardItem.scss";
 import api from "../services/CharacterApi";
 import { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
+import Filters from "./Filters";
 
 function App() {
   // STATES
@@ -40,27 +41,12 @@ function App() {
   return (
     <div>
       <h1>Rick and Morty</h1>
-      <form>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Search your favorite character"
-          value={searchName}
-          onChange={handleSearchName}
-        />
-        <label htmlFor="species"></label>
-        <select
-          name="species"
-          id="species"
-          value={searchSpecies}
-          onChange={handleSearchSpecies}
-        >
-          <option value="all">All</option>
-          <option value="Human">Human</option>
-          <option value="Alien">Alien</option>
-        </select>
-      </form>
+      <Filters
+        searchName={searchName}
+        handleSearchName={handleSearchName}
+        searchSpecies={searchSpecies}
+        handleSearchSpecies={handleSearchSpecies}
+      />
       <CharacterList data={filteredData} />
     </div>
   );
