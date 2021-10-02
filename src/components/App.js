@@ -1,4 +1,5 @@
-import "../styles/Card.scss";
+import "../styles/CardList.scss";
+import "../styles/CardItem.scss";
 
 function App() {
   return (
@@ -11,8 +12,13 @@ function App() {
         placeholder="Busca a tu personaje favorito"
       />
       <ul>
-        <li className="card">
-          <img src="" alt={`Foto de nombre`} title={`Foto de nombre`} />
+        <li className="cardList">
+          <img
+            className="cardImage"
+            src="https://raw.githubusercontent.com/Adalab/rick-y-morty/master/assets/img/1.jpeg"
+            alt={`Foto de nombre`}
+            title={`Foto de nombre`}
+          />
           <h4>Nombre del personaje</h4>
           <p>Especie</p>
         </li>
