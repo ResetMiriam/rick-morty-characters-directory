@@ -1,6 +1,7 @@
 function filterByName(props) {
   return (
     <input
+      className="filter filter__name"
       type="text"
       name="name"
       id="name"

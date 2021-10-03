@@ -1,3 +1,5 @@
+import "../styles/layout/CharacterList.scss";
+
 import CharacterCard from "./CharacterCard";
 
 function CharacterList(props) {

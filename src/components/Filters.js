@@ -1,9 +1,10 @@
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
+import "../styles/layout/Filters.scss";
 
 function filters(props) {
   return (
-    <form>
+    <form className="form">
       <FilterByName
         searchName={props.searchName}
         handleSearchName={props.handleSearchName}

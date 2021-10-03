@@ -1,3 +1,5 @@
+import "../styles/layout/CharacterCard.scss";
+
 function CharacterCard(props) {
   return (
     <>

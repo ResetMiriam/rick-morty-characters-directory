@@ -1,0 +1,25 @@
+.header {
+  &__section {
+    width: 100vw;
+    height: 50vh;
+    padding: 15px;
+
+    border-bottom: solid #90fe4d 5px;
+
+    @media all and (min-width: 800px) {
+      background-image: url("../../images/background.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    @media all and (min-width: 800px) {
+      float: left;
+      width: 50vw;
+      max-width: 700px;
+    }
+  }
+}

@@ -1,9 +1,12 @@
-import "../styles/CardList.scss";
-import "../styles/CardItem.scss";
+//stylesheets
+import "../styles/core/Reset.scss";
+//components
+import CharacterList from "./CharacterList";
+import Header from "./Header";
+import Filters from "./Filters";
+
 import api from "../services/CharacterApi";
 import { useEffect, useState } from "react";
-import CharacterList from "./CharacterList";
-import Filters from "./Filters";
 
 function App() {
   // STATES
@@ -40,14 +43,16 @@ function App() {
 
   return (
     <div>
-      <h1>Rick and Morty</h1>
-      <Filters
-        searchName={searchName}
-        handleSearchName={handleSearchName}
-        searchSpecies={searchSpecies}
-        handleSearchSpecies={handleSearchSpecies}
-      />
-      <CharacterList data={filteredData} />
+      <Header />
+      <main className="main__section">
+        <Filters
+          searchName={searchName}
+          handleSearchName={handleSearchName}
+          searchSpecies={searchSpecies}
+          handleSearchSpecies={handleSearchSpecies}
+        />
+        <CharacterList data={filteredData} />
+      </main>
     </div>
   );
 }
