@@ -2,12 +2,14 @@
 import "../styles/core/Reset.scss";
 import "../styles/layout/Main.scss";
 //components
-import CharacterList from "./CharacterList";
 import Header from "./Header";
 import Filters from "./Filters";
+import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 
 import api from "../services/CharacterApi";
 import { useEffect, useState } from "react";
+import { Route, Switch, useRouteMatch } from "react-router";
 
 function App() {
   // STATES
@@ -31,6 +33,15 @@ function App() {
     setSearchSpecies(ev.target.value);
   };
 
+  const routeData = useRouteMatch("/character/:id");
+  const characterId = routeData !== null ? routeData.params.id : "";
+
+  const selectedCharacter = data.find(
+    (character) => character.id === parseInt(characterId)
+  );
+
+  console.log(selectedCharacter);
+
   const filteredData = data
     .filter((character) =>
       character.name
@@ -45,15 +56,31 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="main__section">
-        <Filters
-          searchName={searchName}
-          handleSearchName={handleSearchName}
-          searchSpecies={searchSpecies}
-          handleSearchSpecies={handleSearchSpecies}
-        />
-        <CharacterList data={filteredData} />
-      </main>
+      <Switch>
+        <Route path="/character/:id">
+          <section>
+            <CharacterDetail character={selectedCharacter} />
+          </section>
+        </Route>{" "}
+        <Route exact path="/">
+          <main className="main__section">
+            <section>
+              <Filters
+                searchName={searchName}
+                handleSearchName={handleSearchName}
+                searchSpecies={searchSpecies}
+                handleSearchSpecies={handleSearchSpecies}
+              />
+            </section>
+            <section>
+              <CharacterList data={filteredData} />
+            </section>
+          </main>
+        </Route>
+        <Route>
+          <section>Oh! Página equivocada</section>
+        </Route>
+      </Switch>
     </div>
   );
 }
