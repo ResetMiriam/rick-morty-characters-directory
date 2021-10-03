@@ -1,5 +1,6 @@
 //stylesheets
 import "../styles/core/Reset.scss";
+import "../styles/layout/Main.scss";
 //components
 import CharacterList from "./CharacterList";
 import Header from "./Header";

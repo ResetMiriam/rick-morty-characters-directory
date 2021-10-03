@@ -1,13 +1,14 @@
 .header {
   &__section {
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
     padding: 15px;
-
     border-bottom: solid #90fe4d 5px;
+    background-color: black;
 
     @media all and (min-width: 800px) {
-      background-image: url("../../images/background.png");
+      height: 50vh;
+      background-image: url("../../images/background_header.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: right;
@@ -16,6 +17,8 @@
   }
 
   &__title {
+    max-width: 95vw;
+
     @media all and (min-width: 800px) {
       float: left;
       width: 50vw;
