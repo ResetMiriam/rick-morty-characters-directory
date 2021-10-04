@@ -8,7 +8,13 @@ function CharacterList(props) {
   }
   const html = props.data.map((characterData) => (
     <li className="cardList" key={characterData.id}>
-      <CharacterCard characterData={characterData} />
+      <CharacterCard
+        id={characterData.id}
+        image={characterData.image}
+        name={characterData.name}
+        species={characterData.species}
+        status={characterData.status}
+      />
     </li>
   ));
 

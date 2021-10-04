@@ -1,6 +1,6 @@
-function specieImage(props) {
-  const human = <i class="fas fa-user-alt"></i>;
-  const alien = <i class="fas fa-rocket"></i>;
+function IconSpecie(props) {
+  const human = <i className="fas fa-user-alt"></i>;
+  const alien = <i className="fas fa-rocket"></i>;
 
   const whatSpecie = (specie) => {
     if (specie === "Human") {
@@ -12,4 +12,4 @@ function specieImage(props) {
   return whatSpecie(props.specie);
 }
 
-export default specieImage;
+export default IconSpecie;
