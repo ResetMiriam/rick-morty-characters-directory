@@ -1,6 +1,6 @@
 //stylesheets
-import "../styles/core/Reset.scss";
-import "../styles/layout/Main.scss";
+import "../styles/App.scss";
+
 //components
 import Header from "./Header";
 import Filters from "./Filters";
@@ -40,8 +40,6 @@ function App() {
     (character) => character.id === parseInt(characterId)
   );
 
-  console.log(selectedCharacter);
-
   const filteredData = data
     .filter((character) =>
       character.name
@@ -66,7 +64,7 @@ function App() {
           />
         </section>
         <section>
-          <CharacterList data={filteredData} />
+          <CharacterList data={filteredData} searchName={searchName} />
         </section>
       </main>
       <Switch>
@@ -74,11 +72,8 @@ function App() {
           <section>
             <CharacterDetail character={selectedCharacter} />
           </section>
-        </Route>{" "}
-        <Route exact path="/"></Route>
-        <Route>
-          <section>Oh! Página equivocada</section>
         </Route>
+        <Route exact path="/"></Route>
       </Switch>
     </div>
   );

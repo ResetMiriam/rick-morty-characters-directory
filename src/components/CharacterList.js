@@ -1,8 +1,11 @@
-import "../styles/layout/CharacterList.scss";
+import CharacterNotFound from "./CharacterNotFound";
 
 import CharacterCard from "./CharacterCard";
 
 function CharacterList(props) {
+  if (props.data.length === 0) {
+    return <CharacterNotFound searchName={props.searchName} />;
+  }
   const html = props.data.map((characterData) => (
     <li className="cardList" key={characterData.id}>
       <CharacterCard characterData={characterData} />

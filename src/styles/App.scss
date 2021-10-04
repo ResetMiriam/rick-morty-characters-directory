@@ -1,0 +1,14 @@
+@import "core/variables";
+@import "core/Reset";
+@import "layout/Header";
+@import "layout/Filters";
+@import "layout/Main";
+@import "layout/CharacterList";
+@import "layout/CharacterCard";
+@import "components/Modal";
+
+body {
+  line-height: 1;
+  font-size: 16px;
+  font-family: $font_text;
+}

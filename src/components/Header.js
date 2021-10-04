@@ -1,5 +1,4 @@
 import background from "../images/Rick_and_Morty_Logo.png";
-import "../styles/layout/Header.scss";
 
 function header(props) {
   return (

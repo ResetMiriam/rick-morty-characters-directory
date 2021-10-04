@@ -1,10 +1,12 @@
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
-import "../styles/layout/Filters.scss";
 
 function filters(props) {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <FilterByName
         searchName={props.searchName}
         handleSearchName={props.handleSearchName}
