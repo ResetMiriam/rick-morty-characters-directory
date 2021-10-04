@@ -56,27 +56,26 @@ function App() {
   return (
     <div>
       <Header />
+      <main className="main__section">
+        <section>
+          <Filters
+            searchName={searchName}
+            handleSearchName={handleSearchName}
+            searchSpecies={searchSpecies}
+            handleSearchSpecies={handleSearchSpecies}
+          />
+        </section>
+        <section>
+          <CharacterList data={filteredData} />
+        </section>
+      </main>
       <Switch>
         <Route path="/character/:id">
           <section>
             <CharacterDetail character={selectedCharacter} />
           </section>
         </Route>{" "}
-        <Route exact path="/">
-          <main className="main__section">
-            <section>
-              <Filters
-                searchName={searchName}
-                handleSearchName={handleSearchName}
-                searchSpecies={searchSpecies}
-                handleSearchSpecies={handleSearchSpecies}
-              />
-            </section>
-            <section>
-              <CharacterList data={filteredData} />
-            </section>
-          </main>
-        </Route>
+        <Route exact path="/"></Route>
         <Route>
           <section>Oh! Página equivocada</section>
         </Route>
