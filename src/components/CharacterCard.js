@@ -13,10 +13,10 @@ function CharacterCard(props) {
       />
       <div className="card__text--container">
         <h4 className="card__text card__name">{props.name}</h4>
-        <p className=" card__text card__specie">
+        <div className=" card__text card__icons">
           <IconSpecie specie={props.species} />
           <IconStatus status={props.status} />
-        </p>
+        </div>
       </div>
     </Link>
   );

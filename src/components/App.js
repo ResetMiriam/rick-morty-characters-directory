@@ -6,8 +6,10 @@ import Header from "./Header";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-
+import Footer from "./Footer";
 import api from "../services/CharacterApi";
+
+//others
 import { useEffect, useState } from "react";
 import { Route, Switch, useRouteMatch } from "react-router";
 
@@ -36,6 +38,7 @@ function App() {
     setSearchSpecies(ev.target.value);
   };
 
+  //DATA
   const routeData = useRouteMatch("/character/:id");
   const characterId = routeData !== null ? routeData.params.id : "";
 
@@ -43,6 +46,7 @@ function App() {
     (character) => character.id === parseInt(characterId)
   );
 
+  //FILTERS
   const filteredData = data
     .filter((character) =>
       character.name
@@ -70,6 +74,7 @@ function App() {
           <CharacterList data={filteredData} searchName={searchName} />
         </section>
       </main>
+      <Footer />
       <Switch>
         <Route path="/character/:id">
           <section>

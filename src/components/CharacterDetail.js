@@ -6,7 +6,7 @@ function CharacterDetail(props) {
   if (props.character === undefined) {
     return (
       <Modal title="Upps!">
-        <p>This character doesn't exist.</p>
+        <p className=" detail__text">This character doesn't exist.</p>
       </Modal>
     );
   } else {

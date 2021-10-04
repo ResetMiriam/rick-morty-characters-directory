@@ -3,10 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+
     height: 30vh;
     padding: 15px;
-
     background-color: black;
 
     @media all and (min-width: 800px) {
@@ -14,6 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 45vh;
+
       background-image: url("../../images/background_header.png");
       background-size: cover;
       background-repeat: no-repeat;
