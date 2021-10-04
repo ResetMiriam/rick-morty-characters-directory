@@ -10,19 +10,17 @@ function CharacterDetail(props) {
   } else {
     return (
       <Modal title={props.character.name}>
-        <main className="main__section">
-          <img
-            className="detailCardImage"
-            src={props.character.image}
-            alt={props.character.name}
-            title={props.character.name}
-          />
-          <h4>{props.character.name}</h4>
-          <p>Status: {props.character.status}</p>
-          <p>Species: {props.character.species}</p>
-          <p>Origin: {props.character.planet}</p>
-          <p>Episodes: {props.character.episodes}</p>
-        </main>{" "}
+        <img
+          className="detail__cardImage"
+          src={props.character.image}
+          alt={props.character.name}
+          title={props.character.name}
+        />
+        <h4 className="detail__name">{props.character.name}</h4>
+        <p className="detail__text">Status: {props.character.status}</p>
+        <p className="detail__text">Species: {props.character.species}</p>
+        <p className="detail__text">Origin: {props.character.planet}</p>
+        <p className="detail__text">Episodes: {props.character.episodes}</p>
       </Modal>
     );
   }

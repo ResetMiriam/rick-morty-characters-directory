@@ -63,7 +63,7 @@ function App() {
             handleSearchSpecies={handleSearchSpecies}
           />
         </section>
-        <section>
+        <section className="data_container">
           <CharacterList data={filteredData} searchName={searchName} />
         </section>
       </main>

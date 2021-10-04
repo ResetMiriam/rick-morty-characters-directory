@@ -1,18 +1,28 @@
 .header {
   &__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 40vh;
+    height: 30vh;
     padding: 15px;
 
     background-color: black;
 
     @media all and (min-width: 800px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 45vh;
       background-image: url("../../images/background_header.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: right;
       overflow: hidden;
+    }
+    @media all and (min-width: 1200px) {
+      justify-content: flex-start;
+      align-items: center;
     }
   }
 
@@ -21,8 +31,7 @@
     padding: 20px;
 
     @media all and (min-width: 800px) {
-      float: left;
-      width: 50vw;
+      width: 60vw;
       max-width: 700px;
     }
   }

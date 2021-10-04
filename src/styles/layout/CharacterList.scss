@@ -2,18 +2,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: solid #90fe4d;
+  align-items: center;
+  border: solid $green;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px #10aabf;
-  max-width: 15rem;
-  max-height: 20rem;
+  box-shadow: 5px 5px 10px $blue;
   list-style: none;
   margin: 15px;
-  transition: all ease 0.5s;
+  height: 380px;
+  width: 270px;
   &:hover {
-    border: solid #10aabf 3px;
-    background-color: #90fe4d;
-    box-shadow: 5px 5px 10px #90fe4d;
+    border: solid $blue 3px;
+    background-color: $green;
+    box-shadow: 5px 5px 10px $green;
     transform: translate(-3px, -3px);
   }
   &__complete {

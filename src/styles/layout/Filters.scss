@@ -1,10 +1,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  background-color: #90fe4d;
+  background-color: $green;
   border-radius: 0 0 20px 20px;
   padding: 10px 15px 15px 15px;
-  box-shadow: 5px 5px 10px #10aabf;
+  box-shadow: 5px 5px 10px $blue;
 
   @media all and (min-width: 800px) {
     flex-direction: row;
@@ -17,16 +17,16 @@
   border: none;
   font-family: $font_text;
   font-size: 1.5rem;
-  border: 3px dashed white;
+  border: 3px dashed $white;
   border-radius: 15px;
   outline: none;
-  color: grey;
+  color: $grey;
   margin: 5px 0;
-  text-shadow: 1px 1px 2px white;
+  text-shadow: 1px 1px 2px $white;
 
   &:focus {
     background-color: $blue;
-    color: white;
+    color: $white;
   }
 
   @media all and (min-width: 800px) {

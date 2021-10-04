@@ -7,7 +7,7 @@ function Modal(props) {
         <div className="modal__content">
           <header className="modal__header">
             <h2 className="modal__title">{props.title}</h2>
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: "none" }}>
               <span className="modal__close icon fas fa-times"></span>
             </Link>
           </header>

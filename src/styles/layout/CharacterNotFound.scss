@@ -1,0 +1,25 @@
+.notFound {
+  &__section {
+    display: flex;
+    justify-content: flex-start;
+    height: 250px;
+    width: 600px;
+    max-width: 90vw;
+    background-image: url("../../images/RyM_notFound.png");
+    background-size: cover;
+    background-position: center;
+    margin: 25px auto auto auto;
+
+    border: solid $green;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px $blue;
+  }
+  &__text {
+    color: $white;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px $grey;
+    margin: auto auto auto 15px;
+    width: 65%;
+    overflow-y: hidden;
+  }
+}
