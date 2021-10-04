@@ -29,6 +29,10 @@
   &__title {
     max-width: 95vw;
     padding: 20px;
+    transition: all ease 0.5s;
+    &:hover {
+      transform: scale(1.02);
+    }
 
     @media all and (min-width: 800px) {
       width: 60vw;

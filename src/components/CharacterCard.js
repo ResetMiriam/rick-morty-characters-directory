@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SpecieImage from "./SpecieImage";
 
 function CharacterCard(props) {
   return (
@@ -15,7 +16,9 @@ function CharacterCard(props) {
       <div className="card__text--container">
         <h4 className="card__text card__name">{props.characterData.name}</h4>
         <p className=" card__text card__specie">
-          {props.characterData.species}
+          {`${props.characterData.species} `}
+
+          <SpecieImage specie={props.characterData.species} />
         </p>
       </div>
     </Link>
