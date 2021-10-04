@@ -20,7 +20,10 @@ function App() {
   //USEFFECT
   useEffect(() => {
     api().then((initialData) => {
-      setData(initialData);
+      const orderCharacter = initialData.sort((a, b) =>
+        a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+      );
+      setData(orderCharacter);
     });
   }, []);
 
