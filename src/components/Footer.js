@@ -7,14 +7,22 @@ function footer() {
       </p>{" "}
       <div className="footer__copy">
         {" "}
-        &copy; 2021 Miriamy.{" "}
+        &copy; 2021 ResetMiriam{" "}
         <a
           target="_blank"
           rel="noopener noreferrer"
           title="Rick and Morty Directory"
-          href="https://www.linkedin.com/in/miriam-verd%C3%BA-franc%C3%A9s/"
+          href="https://www.linkedin.com/in/miriam-verdu-frances/"
         >
           <i className="fab fa-linkedin"></i>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Rick and Morty Directory"
+          href="https://twitter.com/ResetMiriam"
+        >
+          <i class="fab fa-twitter"></i>
         </a>
       </div>
     </footer>
