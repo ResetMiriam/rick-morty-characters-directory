@@ -11,7 +11,7 @@ function footer() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          title="Rick and Morty Directory"
+          title="Miriam Verdú Francés"
           href="https://www.linkedin.com/in/miriam-verdu-frances/"
         >
           <i className="fab fa-linkedin"></i>
@@ -19,7 +19,7 @@ function footer() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          title="Rick and Morty Directory"
+          title="ResetMiriam"
           href="https://twitter.com/ResetMiriam"
         >
           <i class="fab fa-twitter"></i>
